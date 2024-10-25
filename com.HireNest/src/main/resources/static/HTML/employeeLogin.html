@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employer Registration</title>
+    <link rel="stylesheet" type="text/css" href="../employeeLogin.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+     <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/" class="brand">HireNest</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Jobs</a></li>
+            <li><a href="/HTML/employeeSignUp.html">Employer Register</a></li>
+           
+            <li><a href="/HTML/userLogin.html">User Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Employee Login Form -->
+    
+    <main class="login-container">
+        <div class="login-form">
+            <h2>Employee Login</h2>
+            <form onsubmit="fun(event)">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <p id="error-msg" style="color: red"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <p id="pass-error" style="color:red"></p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+                <p class="register-link">Don't have an account? <a href="employeeSignUp.html"
+                        >Register here</a></p>
+            </form>
+        </div>
+    </main>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="/JavaScript/employeeLogin.js"></script>
+</body>
+</html>

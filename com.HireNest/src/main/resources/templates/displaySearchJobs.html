@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Job search html page</title>
+<link rel="stylesheet" type="text/css" href="../../displaySearchedJobs.css">
+</head>
+
+<body>
+	<!-- Navigation Bar -->
+	<nav class="navbar">
+		<a href="/" class="brand">JobSearch</a> <a href="/home">Home</a> <a
+			href="/jobs">Jobs</a> <a href="/logout">Logout</a>
+	</nav>
+
+	<!-- Job Search and Filters Form -->
+	<div class="search-container">
+		<h1>Find Your Job</h1>
+		<form action="" method="" class="search-form">
+			<input type="text" name="title" placeholder="Search by job title..." />
+			<input type="text" name="experienceLevel"
+				placeholder="Experience level..." /> <select name="sortBy">
+				<option value="title">Sort by Title</option>
+				<option value="experienceLevel">Sort by Experience Level</option>
+			</select>
+			<button type="submit">Search</button>
+		</form>
+	</div>
+
+	<!-- Display Job Listings -->
+	<div class="job-list">
+		<h2>Available Jobs</h2>
+		<ul>
+			<!-- Display the list of jobs dynamically -->
+			<li th:each="job : ${jobs}" class="job-item">
+				<div class="job-details">
+					<h3 th:text="${job.title}">Job Title</h3>
+					<p><strong>Company:</strong> <span th:text="${job.company}">Company</span></p>
+					<p><strong>Location:</strong> <span th:text="${job.location}">Location</span></p>
+					<p><strong>Experience Level:</strong> <span th:text="${job.experienceLevel}">Experience Level</span></p>
+					<p><strong>Description:</strong> <span th:text="${job.description}">Description</span></p>
+				</div>
+				<div class="job-actions">
+					<!-- Button to view job details or apply for job -->
+					<a th:href="@{/jobs/details(id=${job.id})}"
+						class="view-details-button">View Details</a>
+				     <form action="/applyjob" method="get">
+					 <button name="jobId" th:value="${job.id}"class="apply-button">Apply</button>
+						</form>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

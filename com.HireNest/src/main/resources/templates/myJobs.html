@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jobs</title>
+    <link rel="stylesheet" type="text/css" href="../../myJobs.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/" class="brand">HireNest</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/" th:href="@{/}">Home</a></li>
+            <li><a href="/employee/jobs/editjobs">My Jobs</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="my-jobs-container">
+        <h1>My Posted Jobs</h1>
+        <!-- Display List of Jobs Posted by the Employee -->
+        <ol id="li-item">
+            <li th:each="job : ${listofapplicationscount}">
+                <div class="job-details">
+                    <h3 th:text="${job.key.title}">Job Title</h3>
+                    <p><strong>Company:</strong><span th:text="${job.key.company}">Company</span></p>
+                    <p><strong>Location:</strong><span th:text="${job.key.location}">Location</span></p>
+                    <p><strong>Experience Level:</strong><span th:text="${job.key.experienceLevel}">Experience Level</span>
+                    </p>
+                    <p><strong>Description:</strong> <span th:text="${job.key.description}">Description</span></p>
+                
+                <div class="job-actions">
+                  <form action="/employee/jobs/editjobs" method="Post">
+                    <button class="edit-button" name="Id" th:value="${job.key.id}">Edit</button>
+                    </form>
+                    
+                    <form action="/employee/jobs/deletejob" method="get">
+                    <button type="submit" name="id" class="delete-button"  th:value="${job.key.id}">Delete</button>
+                  </form>
+                  
+                  <form action="/employee/applications" method="Post" class="applications-form">
+                  <p><Strong>No. Of Applicants: </Strong><span th:text="${job.value}"></span>
+                  <button type="submit" name="Id" th:value="${job.key.id}">View Applications</button>
+                  </form>
+                </div>
+              </div>
+            </li>
+       </ol>
+    </div>
+    
+
+</body>
+
+</html>

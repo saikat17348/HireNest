@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+    <link rel="stylesheet" type="text/css" href="../../../editJobs.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/" class="brand">HireNest</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="">My Jobs</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="edit-job-container">
+        <h1>Edit Job</h1>
+        <form action="/employee/jobs/update" method="post">
+            <input type="hidden" name="id" th:value="${jobs.id}"/>
+
+            <label for="title">Job Title:</label>
+            <input type="text" name="title" th:field="${jobs.title}" required />
+            
+            <label for="location">Location:</label>
+            <input type="text" name="location" th:field="${jobs.location}" required />
+            
+            <label for="company">Company:</label>
+            <input type="text" name="company" th:field="${jobs.company}" required />
+            
+            <label for="description">Description:</label>
+            <textarea name="description" required th:field="${jobs.description}"></textarea>
+            
+            <label for="requirements">Requirements:</label>
+            <textarea name="requirements" rows="5" required th:field="${jobs.requirements}"></textarea><br>
+            
+            <label for="salary">Salary:</label>
+            <input type="text" name="salary" th:fiels="${jobs.salary}"/><br>
+            
+            <label for="employmentType">Employment Type:</label>
+            <input type="text" name="employementType" th:field="*{jobs.employementType}" /><br>
+            
+            <label for="experienceLevel">Experience Level:</label>
+            <input type="text" name="experienceLevel"th:field="${jobs.experienceLevel}"><br>
+            
+            <input type="hidden" name="postingDate" th:value="${jobs.postingDate}" required /><br>
+
+            <button type="submit">Update Job</button>
+        </form>
+    </div>
+</body>
+
+</html>

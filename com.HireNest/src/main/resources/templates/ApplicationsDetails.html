@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applicants</title>
+    <link rel="stylesheet" type="text/css" href="../../applicationsDetails.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+
+    <!-- Navbar (reuse your existing one) -->
+    <nav class="navbar" style="background-color: #1a73e8;">
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/jobs/post">Post a Job</a></li>
+            <li><a href="/jobs/my-jobs">My Jobs</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="applicants-container">
+        <h1>Applicants for Job: <span th:text>Job Title</span></h1>
+
+        <table class="applicants-table">
+            <thead>
+                <tr>
+                    <th>Applicant Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Experience Level</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="applicant : ${listofapplicationsbyjobId}">
+                    <td th:text="${applicant.name}">Applicant Name</td>
+                    <td th:text="${applicant.email}">Email</td>
+                    <td th:text="${applicant.applicationDate}">Phone Number</td>
+                    <td th:text="${applicant.status}">Experience Level</td>
+                    <form action="/application/view/resume" method="get">
+                    <td><button type="submit" name="Id" th:value="${applicant.id}" th:href="${applicant.resume}">View Resume</button></td>
+                     </form>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Back button -->
+        <a href="/jobs/my-jobs" class="back-button">Back to My Jobs</a>
+    </div>
+
+</body>
+
+</html>

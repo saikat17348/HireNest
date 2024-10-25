@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up HireNest</title>
+    <link rel="stylesheet" type="text/css" href="../signup.css">
+</head>
+
+<body>
+    
+    <div>
+     <header class="navbar">
+        <div class="nav-bar-container">
+            <div class="logo">
+                <h1>HireNest</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Jobs</a></li>
+                    <li><a href="userLogin.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    </div>
+    
+    <div class="container">
+        <form class="signup-form" onsubmit="RegisterationValidation(event)">
+            <h2>Create Your Profile</h2>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+               <p id="fullname-error" style="color: red"></p>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email ID">
+                <p id="email-error" style="color: red"></p>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password">
+                <p id="password-error" style="color: red"></p>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                <p id="mobile-error" style="color: red"></p>
+            </div>
+
+            <!-- Work Status -->
+            <div class="form-group">
+                <label for="workStatus">Work Status:</label>
+                <select id="workStatus" name="workStatus">
+                    <option value="">Select your work status</option>
+                    <option value="fresher">Fresher</option>
+                    <option value="employed">Employed</option>
+                    <option value="student">Student</option>
+                    <option value="self-employed">Self-Employed</option>
+                </select>
+                <p id="work-status-error" style="color: red"></p>
+            </div>
+
+            <!-- Current City -->
+            <div class="form-group">
+                <label for="city">Current City:</label>
+                <input type="text" id="city" name="currentCity" placeholder="Enter your current city">
+                <p id="current-city-error" style="color: red"></p>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="checkbox">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms" class="checkbox" >I agree to the Terms & Conditions</label>
+                <br>
+                <p id="terms-error" style="color: red"></p>
+            </div>
+
+            <!-- Register Button -->
+            <button type="submit" class="btn">Register Now</button>
+        </form>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 HireNest. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <Script src="/JavaScript/userRegister.js"></Script>
+</body>
+
+</html>
+</body>
+</html>

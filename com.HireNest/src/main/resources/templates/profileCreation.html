@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup - Job Portal</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" text="text/css" th:href="@{profile.css}">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>HireNest</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" th:href="@{/}">Home</a></li>
+                    <li><a href="/jobs" th:href="@{/jobs}">Jobs</a></li>
+                    <li><a href="/logout" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Setup Form Section -->
+    <main class="profile-container">
+        <div class="profile-form">
+            <h2>Complete Your Profile</h2>
+            <form action="/createprofile" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience (in years):</label>
+                    <input type="number" id="experience" name="experience" min="0" max="50">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills:</label>
+                    <input type="text" id="skills" name="skills" placeholder="e.g., Java, Spring Boot, MySQL">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="resume">Upload Resume:</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Save Profile</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Job Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

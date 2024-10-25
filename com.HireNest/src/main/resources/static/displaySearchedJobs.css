@@ -1,0 +1,92 @@
+/* Navbar styles */
+body{
+	margin: 0px;
+	padding: 0px;
+}
+.navbar {
+    background-color: #1a73e8; /* Using the preferred color code */ 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar a:hover{
+	cursor: pointer;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+.navbar .brand {
+    font-size: 1.5em;
+    margin-right: 900px;
+}
+
+/* Search container styles */
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-form input, .search-form select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0b5db7;
+}
+
+/* Job listing styles */
+.job-list {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+}
+
+.job-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-details {
+    max-width: 70%;
+}
+
+.job-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-details-button, .apply-button {
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.view-details-button:hover, .apply-button:hover {
+    background-color: #0b5db7;
+}

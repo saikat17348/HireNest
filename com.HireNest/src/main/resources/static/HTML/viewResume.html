@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Resume</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        iframe {
+            width: 80%;
+            height: 80vh;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resume</h1>
+    <iframe id="resumeFrame" src=""></iframe>
+
+    <script>
+        // Get the resume URL from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const resumeUrl = urlParams.get('url');
+
+        // Set the src attribute of the iframe to display the resume
+        if (resumeUrl) {
+            document.getElementById('resumeFrame').src = resumeUrl;
+        } else {
+            document.body.innerHTML = '<h2>No resume found!</h2>';
+        }
+    </script>
+</body>
+
+</html>

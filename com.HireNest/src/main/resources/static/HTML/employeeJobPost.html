@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Post a Job</title>
+    <link rel="stylesheet" type="text/css" href="../jobPost.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/" class="brand">HireNest</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+ 
+                <li><a onclick="employerjobslist()">My Jobs</a></li>
+            
+            <li><a onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Job Posting Form -->
+    <div class="container">
+        <h2>Post a Job</h2>
+
+        <form onsubmit="employeejobpost(event)">
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title"/>
+            <p id="title-error" style="color: red"></p>
+            <br>
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" />
+            <p id="location-error" style="color: red"></p>
+            <br>
+            
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" />
+            <p id="company-error" style="color: red"></p>
+             <br>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5"></textarea>
+             <p id="desc-error" style="color: red"></p>
+            <br>
+            
+            <label for="requirements">Requirements:</label>
+            <textarea id="requirements" name="requirements" rows="5"></textarea>
+             <p id="requirements-error" style="color: red"></p>
+            <br>
+            
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" />
+            <p id="salary-error" style="color: red"></p>
+            <br>
+            
+            <label for="employmentType">Employment Type:</label>
+            <input type="text" id="employementType" name="employementType" />
+            <p id="emp-type-error" style="color: red"></p>
+            <br>
+            
+            <label for="experienceLevel">Experience Level:</label>
+            <select id="experienceLevel" name="experienceLevel">
+					<option value="">Any</option>
+					<option value="Entry">Entry Level</option>
+					<option value="Mid">Mid Level</option>
+					<option value="Senior">Senior Level</option>
+			</select>
+             <p id="exp-error" style="color: red" ></p>
+            <br>
+            
+            <label for="postingDate">Posting Date:</label>
+            <input type="date" id="postingDate" name="postingDate"/>
+             <p id="post-error" style="color: red"></p>
+             <br>
+            
+            <button type="submit">Post Job</button>
+        </form>
+    </div>
+    
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="/JavaScript/employeeJobPost.js"></script>
+</body>
+
+</html>

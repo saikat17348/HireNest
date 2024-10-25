@@ -1,0 +1,142 @@
+/* styles.css */
+
+/* General Reset */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1a73e8; /* Navbar color */
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+/* My Jobs Container */
+.my-jobs-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.my-jobs-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Job Details */
+.job-details {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.job-details h3 {
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+.job-details p {
+    margin: 5px 0;
+    color: black #555;
+}
+
+/* Job Actions */
+.job-actions {
+    margin-top: 10px;
+    display: flex;
+    
+}
+
+.edit-button,
+.delete-button {
+	width: 60px;
+    padding: 8px ;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.applications-form{
+	display: flex;
+	justify-content: flex-end;
+	width: 400px;
+	margin-left: 450px;
+}
+
+button{
+	background-color: #1a73e8;
+    color: white;
+    padding: 8px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #155bba;
+}
+
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+#noofapp{
+	margin-left: 470px;
+	margin-top: 20px;	
+}
+
+#viewapp{
+	padding: 10px;
+	height: 40px;
+	border-radius: 5px;
+}

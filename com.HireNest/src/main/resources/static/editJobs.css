@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1a73e8; /* Navbar color */
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.edit-job-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-job-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-job-container label {
+    margin-top: 10px;
+}
+
+.edit-job-container input, .edit-job-container textarea {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button{
+	border: 1px solid black;
+	margin-top: 15px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #1a73e8;
+}
+
+button:hover {
+	background-color: #1a73e8;
+}

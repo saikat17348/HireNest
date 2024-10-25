@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Job search html page</title>
+<link rel="stylesheet" type="text/css" href="jobsearch.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a href="/" class="brand">JobPortal</a>
+		</div>
+		<ul class="navbar-links">
+			<li><a href="/">Home</a></li>
+			<li><a href="/jobs">Jobs</a></li>
+			<li><a href="/employer/login">Employer Login</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<h2>Job Listings</h2>
+
+		<form action="job/search" method="post" class="search-form">
+			<div class="search-group">
+				<label for="title">Job Title:</label> <input type="text" id="title"
+					name="title" placeholder="Enter job title" />
+			</div>
+			<div class="search-group">
+				<label for="location">Location:</label> <input type="text"
+					id="location" name="location" placeholder="Enter location" />
+			</div>
+			<div class="search-group">
+				<label for="experienceLevel">Experience Level:</label> <select
+					id="experienceLevel" name="experienceLevel">
+					<option value="">Any</option>
+					<option value="Entry">Entry Level</option>
+					<option value="Mid">Mid Level</option>
+					<option value="Senior">Senior Level</option>
+				</select>
+			</div>
+			<div class="search-group">
+				<label for="company">Company:</label> <input type="text"
+					id="company" name="company" placeholder="Enter company name" />
+			</div>
+			<button type="submit">Search</button>
+		</form>
+
+	     <div class="job-list">
+	     <h3>All Jobs</h3>
+	          
+	          <ul>
+	             <!-- displaying all the jobs -->
+	             <li th:each="job : ${jobs}" class="job-item" >
+	             <div class="job-details">
+					<h3 th:text="${job.title}">Job Title</h3>
+					<p><strong>Company:</strong> <span th:text="${job.company}">Company</span></p>
+					<p><strong>Location:</strong> <span th:text="${job.location}">Location</span></p>
+					<p><strong>Experience Level:</strong> <span th:text="${job.experienceLevel}">Experience Level</span></p>
+					<p><strong>Description:</strong> <span th:text="${job.description}">Description</span></p>
+				</div>
+				<div class="job-actions">
+					<!-- Button to view job details or apply for job -->
+					<a th:href="@{/jobs/details(id=${job.id})}"
+						class="view-details-button">View Details</a>
+				     
+					<a	th:href="@{/apply(id=${job.id})}" class="apply-button">Apply
+						for Job</a>
+				</div>
+	          
+	          </li>
+	          </ul>
+        
+            </div>
+        </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Job Search</title>
+    <link rel="stylesheet" type="text/css" th:href="jobsearch.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>HireNest</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" th:href="@{/}">Home</a></li>
+                    <li><a href="/jobs" th:href="@{/jobs}">Jobs</a></li>
+                    <li><a href="/logout" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <h2>Search for Jobs</h2>
+        <form action="/jobssearch" method="get">
+            <input type="text" name="keyword" placeholder="Enter Job Title or Keyword">
+            <input type="text" name="location" placeholder="Enter Location">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="job-results" th:if="${jobList}">
+            <div th:each="job : ${jobList}">
+                <h3 th:text="${job.title}">Job Title</h3>
+                <p th:text="'Company: ' + ${job.company}">Company</p>
+                <p th:text="'Location: ' + ${job.location}">Location</p>
+                <a th:href="@{/jobs/details/{id}(id=${job.id})}">View Details</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>  -->

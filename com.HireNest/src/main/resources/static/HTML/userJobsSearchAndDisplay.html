@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Job search and display</title>
+<link rel="stylesheet" type="text/css" href="../jobsearch.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a href="/" class="brand">HireNest</a>
+		</div>
+		<ul class="navbar-links">
+			<li><a href="/">Home</a></li>
+			
+			<li><a href="employeeLogin.html">Employer Login</a></li>
+			<li><a onclick="logout(event)">Logout</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<h2>Job Listings</h2>
+
+		<form class="search-form" onsubmit="jobsearch(event)">
+			<div class="search-group">
+				<label for="title">Job Title:</label> <input type="text" id="title"
+					name="title" placeholder="Enter job title" />
+			</div>
+			<div class="search-group">
+				<label for="location">Location:</label> <input type="text"
+					id="location" name="location" placeholder="Enter location" />
+			</div>
+			<div class="search-group">
+				<label for="experienceLevel">Experience Level:</label> <select
+					id="experienceLevel" name="experienceLevel">
+					<option value="">Any</option>
+					<option value="Entry">Entry Level</option>
+					<option value="Mid">Mid Level</option>
+					<option value="Senior">Senior Level</option>
+				</select>
+			</div>
+			<div class="search-group">
+				<label for="company">Company:</label> <input type="text"
+					id="company" name="company" placeholder="Enter company name" />
+			</div>
+			<button type="submit">Search</button>
+		</form>
+
+	       <div class="job-list">
+	           <h3>All Jobs</h3>
+	          
+	            <ul id="job-list">
+	               <!-- displaying all the jobs -->
+	             
+	             
+				
+	          
+	          
+	          </ul>
+        
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
+      <script src="/JavaScript/userJobsSearchAndDisplay.js"></script>
+</body>
+
+</html>

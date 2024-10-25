@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applicants</title>
+    <link rel="stylesheet" type="text/css" href="../../applicationsDetails.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+
+    <!-- Navbar (reuse your existing one) -->
+    <nav class="navbar" style="background-color: #1a73e8;">
+        <ul>
+            <li class="head"><a href="/">HireNest</a></li>
+            <li><a href="/HTML/employeeJobPost.html">Post a Job</a></li>
+            <li><a onClick="employerjobslist()">My Jobs</a></li>
+            <li><a onClick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="applicants-container" id="app-main-div">
+        <h1 id="h1">Applicants for Job: <span id="jobtitle"></span></h1>
+
+        <table class="applicants-table">
+            <thead>
+                <tr>
+                    <th>Applicant Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Experience Level</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody id="app-list">
+                
+            </tbody>
+        </table>
+
+        <!-- Back button -->
+        <a onclick="employerjobslist()" class="back-button">Back to My Jobs</a>
+    </div>
+    
+    <script src="/JavaScript/employeeJobPost.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/JavaScript/applicationsDetails.js"></script>
+</body>
+
+</html>

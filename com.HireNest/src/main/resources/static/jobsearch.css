@@ -1,0 +1,150 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1a73e8; 
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form .search-group {
+    margin-bottom: 15px;
+}
+
+.search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.search-form input,
+.search-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-form button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #1558d6; /* Darker shade for hover effect */
+}
+
+.job-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between left and right */
+}
+
+.job-actions {
+	border: solid black;
+	margin-left: 800px;
+	margin-top: -200px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: center; /* Center buttons vertically */
+    align-items: flex-end; /* Align buttons to the right */
+}
+
+.job-item h3 {
+    margin-top: 0;
+}
+
+.job-item a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.job-item a:hover {
+    text-decoration: underline;
+}
+
+.view-details-button,
+.apply-button {
+    width: 100px; /* Adjust width as needed */
+    margin-top: 5px; /* Space between buttons */
+    padding: 5px; /* Added padding for better appearance */
+    text-align: center; /* Center text inside buttons */
+    margin-left: 700px;
+    background: blue;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+.view-details-button{
+	margin-top: -150px;
+}
+
+.job-details {
+    display: flex;
+    flex-direction: column;
+    height: 270px; /* Adjust height as needed */
+}
+
+
+

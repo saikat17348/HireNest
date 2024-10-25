@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Post a Job</title>
+    <link rel="stylesheet" type="text/css" href="../jobPost.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="/" class="brand">HireNest</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/" th:href="@{/}">Home</a></li>
+            <form action="/myjobs" method="Post">
+                <li><button>My Jobs</button></li>
+            </form>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Job Posting Form -->
+    <div class="container">
+        <h2>Post a Job</h2>
+
+        <form action="/employee/jobs/post" method="Post">
+            <label for="title">Job Title:</label>
+            <input type="text" id="title" name="title" /><br>
+            
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" /><br>
+            
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" /><br>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="5"></textarea><br>
+            
+            <label for="requirements">Requirements:</label>
+            <textarea id="requirements" name="requirements" rows="5"></textarea><br>
+            
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" /><br>
+            
+            <label for="employmentType">Employment Type:</label>
+            <input type="text" id="employementType" name="employementType" /><br>
+            
+            <label for="experienceLevel">Experience Level:</label>
+            <input type="text" id="experienceLevel" name="experienceLevel" /><br>
+            
+            <label for="postingDate">Posting Date:</label>
+            <input type="date" id="postingDate" name="postingDate"/><br>
+            
+            <button type="submit">Post Job</button>
+        </form>
+    </div>
+</body>
+
+</html>

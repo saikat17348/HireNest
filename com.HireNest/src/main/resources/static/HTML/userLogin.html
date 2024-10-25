@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Login - Job Portal</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="../login.css">
+    
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>HireNest</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="/" th:href="@{/}">Home</a></li>
+                    <li><a href="/" th:href="@{/jobs}">Jobs</a></li>
+                    <li><a href="userRegister.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Form Section -->
+    <main class="login-container">
+        <div class="login-form">
+            <h2>HireNest Login</h2>
+            <form onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <p id="error-msg" style="color: red"></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <p id="pass-error" style="color: red;"></p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Login</button>
+                </div>
+                <p class="register-link">Don't have an account? <a href="userRegister.html"
+                        >Register here</a></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 HireNest. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     
+     <script src="/JavaScript/login.js"></script>
+</body>
+
+</html>
